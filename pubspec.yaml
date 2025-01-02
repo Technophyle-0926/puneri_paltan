@@ -40,6 +40,7 @@ dependencies:
   youtube_player_flutter: ^9.1.1
   material_symbols_icons: ^4.2801.1
   package_rename: ^1.8.0
+  logger: ^2.5.0
 
 dev_dependencies:
   flutter_test:

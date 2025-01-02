@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:puneri_paltan/View/splash_view.dart';
+import '../View/splash_view.dart';
 
 void main() {
   runApp(const MyApp());

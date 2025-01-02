@@ -2,7 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:puneri_paltan/View/dashboard_view.dart';
+
+import '../View/dashboard_view.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
