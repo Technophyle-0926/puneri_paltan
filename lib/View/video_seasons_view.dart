@@ -26,7 +26,7 @@ class _VideoSeasonsViewState extends State<VideoSeasonsView> {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            "Videos by Seasons",
+            "Videos",
             style: GoogleFonts.exo(
               fontSize: 40,
               fontWeight: FontWeight.w600,
