@@ -78,7 +78,7 @@ class _VideoSeasonsViewState extends State<VideoSeasonsView> {
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
-                              color: Colors.white70,
+                              color: Colors.white,
                               // gradient: LinearGradient(
                               //   colors: [
                               //     Color(0xffF4AF23),
@@ -93,10 +93,8 @@ class _VideoSeasonsViewState extends State<VideoSeasonsView> {
                               child: Text(
                                 controller.getseasons![i].catName ?? '',
                                 textAlign: TextAlign.center,
-                                style: GoogleFonts.exo2(
-                                  fontSize: 40,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.black,
+                                style: GoogleFonts.bungeeSpice(
+                                  fontSize: 30,
                                 ),
                               ),
                             ),

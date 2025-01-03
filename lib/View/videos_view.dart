@@ -100,11 +100,14 @@ class _VideosViewState extends State<VideosView> {
                               children: [
                                 Card(
                                   elevation: 2,
-                                  child: Text(
-                                    controller.getvideos![i].name ?? '',
-                                    style: GoogleFonts.exo2(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      controller.getvideos![i].name ?? '',
+                                      style: GoogleFonts.exo2(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ),
                                 ),

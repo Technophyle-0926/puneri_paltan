@@ -36,8 +36,8 @@ class _PhotosCollectionViewState extends State<PhotosCollectionView> {
           child: GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 10,
+              mainAxisSpacing: 15,
+              crossAxisSpacing: 15,
             ),
             itemCount: collection.length,
             itemBuilder: (context, i) {
@@ -46,27 +46,26 @@ class _PhotosCollectionViewState extends State<PhotosCollectionView> {
                   Get.to(() => SinglePhotoView(),
                       arguments: collection[i].toString());
                 },
-                child: Card(
-                  elevation: 10,
-                  child: Image.network(
-                    collection[i].toString(),
-                    loadingBuilder: (context, child, loadingProgress) {
-                      if (loadingProgress == null) return child;
-                      return Center(
-                        child: CircularProgressIndicator(
-                          value: loadingProgress.expectedTotalBytes != null
-                              ? loadingProgress.cumulativeBytesLoaded /
-                                  (loadingProgress.expectedTotalBytes ?? 1)
-                              : null,
-                        ),
-                      );
-                    },
-                    errorBuilder: (context, error, stackTrace) {
-                      return Center(
-                        child: Icon(Icons.error, color: Colors.red),
-                      );
-                    },
-                  ),
+                child: Image.network(
+                  collection[i].toString(),
+                  fit: BoxFit.cover,
+                  alignment: Alignment.topCenter,
+                  loadingBuilder: (context, child, loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return Center(
+                      child: CircularProgressIndicator(
+                        value: loadingProgress.expectedTotalBytes != null
+                            ? loadingProgress.cumulativeBytesLoaded /
+                                (loadingProgress.expectedTotalBytes ?? 1)
+                            : null,
+                      ),
+                    );
+                  },
+                  errorBuilder: (context, error, stackTrace) {
+                    return Center(
+                      child: Icon(Icons.error, color: Colors.red),
+                    );
+                  },
                 ),
               );
             },
