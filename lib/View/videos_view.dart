@@ -5,6 +5,7 @@ import '../Controller/videos_api_controller.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import '../logger_service.dart';
+import 'single_video_view.dart';
 
 class VideosView extends StatefulWidget {
   const VideosView({super.key});
@@ -72,12 +73,11 @@ class _VideosViewState extends State<VideosView> {
                       ),
                     )
                   : Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: GridView.builder(
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 1,
-                          mainAxisSpacing: 10,
-                          crossAxisSpacing: 10,
+                          mainAxisSpacing: 40,
                           childAspectRatio: 1.3,
                         ),
                         itemCount: controller.getvideos!.length,
@@ -89,32 +89,34 @@ class _VideosViewState extends State<VideosView> {
                               autoPlay: false,
                               mute: true,
                               hideControls: true,
-                              showLiveFullscreenButton: true,
                             ),
                           );
-                          return Card(
-                            elevation: 5,
+                          return GestureDetector(
+                            onTap: () {
+                              Get.to(() => SingleVideoView(),
+                                  arguments: controller.getvideos![i]);
+                            },
                             child: Column(
                               children: [
                                 Card(
                                   elevation: 2,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(7.0),
-                                    child: Text(
-                                      controller.getvideos![i].name ?? '',
-                                      style: GoogleFonts.exo2(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                                  child: Text(
+                                    controller.getvideos![i].name ?? '',
+                                    style: GoogleFonts.exo2(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: YoutubePlayer(
-                                    controller: videocontroller,
-                                    showVideoProgressIndicator: false,
-                                    onReady: () => logger.i("Video is Ready"),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(10),
+                                    child: YoutubePlayer(
+                                      controller: videocontroller,
+                                      showVideoProgressIndicator: false,
+                                      onReady: () => logger.i("Video is Ready"),
+                                    ),
                                   ),
                                 )
                               ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:puneri_paltan/View/single_photo_view.dart';
 
 class PhotosCollectionView extends StatefulWidget {
   const PhotosCollectionView({super.key});
@@ -30,37 +31,46 @@ class _PhotosCollectionViewState extends State<PhotosCollectionView> {
             end: Alignment.bottomRight,
           ),
         ),
-        child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 1,
-            mainAxisSpacing: 10,
-            crossAxisSpacing: 10,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8),
+          child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
+            ),
+            itemCount: collection.length,
+            itemBuilder: (context, i) {
+              return GestureDetector(
+                onTap: () {
+                  Get.to(() => SinglePhotoView(),
+                      arguments: collection[i].toString());
+                },
+                child: Card(
+                  elevation: 10,
+                  child: Image.network(
+                    collection[i].toString(),
+                    loadingBuilder: (context, child, loadingProgress) {
+                      if (loadingProgress == null) return child;
+                      return Center(
+                        child: CircularProgressIndicator(
+                          value: loadingProgress.expectedTotalBytes != null
+                              ? loadingProgress.cumulativeBytesLoaded /
+                                  (loadingProgress.expectedTotalBytes ?? 1)
+                              : null,
+                        ),
+                      );
+                    },
+                    errorBuilder: (context, error, stackTrace) {
+                      return Center(
+                        child: Icon(Icons.error, color: Colors.red),
+                      );
+                    },
+                  ),
+                ),
+              );
+            },
           ),
-          itemCount: collection.length,
-          itemBuilder: (context, i) {
-            return Card(
-              elevation: 10,
-              child: Image.network(
-                collection[i].toString(),
-                loadingBuilder: (context, child, loadingProgress) {
-                  if (loadingProgress == null) return child;
-                  return Center(
-                    child: CircularProgressIndicator(
-                      value: loadingProgress.expectedTotalBytes != null
-                          ? loadingProgress.cumulativeBytesLoaded /
-                              (loadingProgress.expectedTotalBytes ?? 1)
-                          : null,
-                    ),
-                  );
-                },
-                errorBuilder: (context, error, stackTrace) {
-                  return Center(
-                    child: Icon(Icons.error, color: Colors.red),
-                  );
-                },
-              ),
-            );
-          },
         ),
       ),
     );
