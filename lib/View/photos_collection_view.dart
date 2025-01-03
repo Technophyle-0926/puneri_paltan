@@ -18,7 +18,6 @@ class _PhotosCollectionViewState extends State<PhotosCollectionView> {
         title: Text("Photo Collection"),
         centerTitle: true,
       ),
-      // body: Text(collection.toString()),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(

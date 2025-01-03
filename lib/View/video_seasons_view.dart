@@ -79,15 +79,6 @@ class _VideoSeasonsViewState extends State<VideoSeasonsView> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
                               color: Colors.white,
-                              // gradient: LinearGradient(
-                              //   colors: [
-                              //     Color(0xffF4AF23),
-                              //     Color(0xffF37F30),
-                              //     // Color(0xffFEA55E),
-                              //   ],
-                              //   begin: Alignment.topLeft,
-                              //   end: Alignment.bottomRight,
-                              // ),
                             ),
                             child: Center(
                               child: Text(

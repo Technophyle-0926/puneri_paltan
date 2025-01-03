@@ -79,15 +79,6 @@ class _SeasonsViewState extends State<PhotosSeasonsView> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(25),
                             color: Colors.white,
-                            // gradient: LinearGradient(
-                            //   colors: [
-                            //     Color(0xffFEA55E),
-                            //     Color(0xffF37F30),
-                            //     Color(0xffF4AF23),
-                            //   ],
-                            //   begin: Alignment.bottomRight,
-                            //   end: Alignment.topLeft,
-                            // ),
                           ),
                           child: Center(
                             child: Text(

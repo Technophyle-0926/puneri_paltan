@@ -44,7 +44,6 @@ class _PlayersViewState extends State<PlayersView> {
             colors: [
               Color(0xffF4AF23),
               Color(0xffF37F30),
-              // Color(0xffFEA55E),
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -109,19 +108,11 @@ class _PlayersViewState extends State<PlayersView> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  // Text(
-                                  //   controller.getplayers![i].name ?? '',
-                                  //   style: TextStyle(
-                                  //     fontWeight: FontWeight.bold,
-                                  //     fontSize: 20,
-                                  //   ),
-                                  //   textAlign: TextAlign.center,
-                                  // ),
                                   Text(
                                     controller.getplayers![i].name
                                             ?.split(' ')
                                             .first ??
-                                        '', // Display first name
+                                        '',
                                     style: TextStyle(
                                       fontWeight: FontWeight.w300,
                                       fontSize: 20,
@@ -132,7 +123,7 @@ class _PlayersViewState extends State<PlayersView> {
                                             ?.split(' ')
                                             .skip(1)
                                             .join() ??
-                                        '', // Display surname
+                                        '',
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 18,

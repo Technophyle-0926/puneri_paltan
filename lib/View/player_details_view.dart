@@ -42,7 +42,6 @@ class _PlayerDetailsViewState extends State<PlayerDetailsView> {
             colors: [
               Color(0xffF4AF23),
               Color(0xffF37F30),
-              // Color(0xffFEA55E),
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -91,9 +90,11 @@ class _PlayerDetailsViewState extends State<PlayerDetailsView> {
                                     Container(
                                       width: 200,
                                       decoration: BoxDecoration(
-                                          color: Colors.amber.shade800,
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(10))),
+                                        color: Colors.amber.shade800,
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(10),
+                                        ),
+                                      ),
                                       child: Center(
                                         child: Text(
                                           "JERSY NO.",
@@ -101,7 +102,6 @@ class _PlayerDetailsViewState extends State<PlayerDetailsView> {
                                             fontSize: 30,
                                             fontWeight: FontWeight.w600,
                                             fontStyle: FontStyle.italic,
-                                            // backgroundColor: Colors.amber.shade800,
                                             color: Colors.white,
                                           ),
                                         ),
@@ -128,9 +128,11 @@ class _PlayerDetailsViewState extends State<PlayerDetailsView> {
                                     Container(
                                       width: 200,
                                       decoration: BoxDecoration(
-                                          color: Colors.amber.shade800,
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(10))),
+                                        color: Colors.amber.shade800,
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(10),
+                                        ),
+                                      ),
                                       child: Center(
                                         child: Text(
                                           "POSITION",
@@ -138,7 +140,6 @@ class _PlayerDetailsViewState extends State<PlayerDetailsView> {
                                             fontSize: 30,
                                             fontWeight: FontWeight.w600,
                                             fontStyle: FontStyle.italic,
-                                            // backgroundColor: Colors.amber.shade800,
                                             color: Colors.white,
                                           ),
                                         ),
@@ -165,9 +166,11 @@ class _PlayerDetailsViewState extends State<PlayerDetailsView> {
                                     Container(
                                       width: 200,
                                       decoration: BoxDecoration(
-                                          color: Colors.amber.shade800,
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(10))),
+                                        color: Colors.amber.shade800,
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(10),
+                                        ),
+                                      ),
                                       child: Center(
                                         child: Text(
                                           "VITALS",
@@ -175,7 +178,6 @@ class _PlayerDetailsViewState extends State<PlayerDetailsView> {
                                             fontSize: 30,
                                             fontWeight: FontWeight.w600,
                                             fontStyle: FontStyle.italic,
-                                            // backgroundColor: Colors.amber.shade800,
                                             color: Colors.white,
                                           ),
                                         ),
@@ -289,7 +291,6 @@ class _PlayerDetailsViewState extends State<PlayerDetailsView> {
                                             fontSize: 30,
                                             fontWeight: FontWeight.w600,
                                             fontStyle: FontStyle.italic,
-                                            // backgroundColor: Colors.amber.shade800,
                                             color: Colors.white,
                                           ),
                                         ),
@@ -410,7 +411,6 @@ class _PlayerDetailsViewState extends State<PlayerDetailsView> {
                                             fontSize: 30,
                                             fontWeight: FontWeight.w600,
                                             fontStyle: FontStyle.italic,
-                                            // backgroundColor: Colors.amber.shade800,
                                             color: Colors.white,
                                           ),
                                         ),
@@ -509,7 +509,6 @@ class _PlayerDetailsViewState extends State<PlayerDetailsView> {
                                             fontSize: 30,
                                             fontWeight: FontWeight.w600,
                                             fontStyle: FontStyle.italic,
-                                            // backgroundColor: Colors.amber.shade800,
                                             color: Colors.white,
                                           ),
                                         ),
