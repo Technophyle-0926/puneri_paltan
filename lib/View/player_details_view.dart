@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shimmer/shimmer.dart';
 
 import '../Controller/player_details_api_controller.dart';
 
@@ -64,11 +65,14 @@ class _PlayerDetailsViewState extends State<PlayerDetailsView> {
                         loadingBuilder: (context, child, loadingProgress) {
                           if (loadingProgress == null) return child;
                           return Center(
-                            child: CircularProgressIndicator(
-                              value: loadingProgress.expectedTotalBytes != null
-                                  ? loadingProgress.cumulativeBytesLoaded /
-                                      (loadingProgress.expectedTotalBytes ?? 1)
-                                  : null,
+                            child: Shimmer.fromColors(
+                              baseColor: Colors.grey.shade300,
+                              highlightColor: Colors.grey.shade100,
+                              child: Image.asset(
+                                'assets/player_full.png',
+                                height: MediaQuery.sizeOf(context).height / 2.3,
+                                width: double.infinity,
+                              ),
                             ),
                           );
                         },
