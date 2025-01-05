@@ -14,6 +14,13 @@ class _SinglePhotoViewState extends State<SinglePhotoView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.white,
+          size: 30,
+        ),
+        backgroundColor: Colors.orange,
+      ),
       body: Center(
         child: PhotoView(
           imageProvider: NetworkImage(

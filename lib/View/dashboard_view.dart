@@ -37,9 +37,9 @@ class _DashboardViewState extends State<DashboardView> {
             ),
           ),
           child: TabBar(
-            labelColor: Colors.black,
-            unselectedLabelColor: Colors.blueGrey,
-            indicatorColor: Colors.black,
+            labelColor: Colors.white,
+            unselectedLabelColor: Colors.black,
+            indicatorColor: Colors.white,
             tabs: [
               Tab(
                 icon: Icon(Icons.photo_album_outlined),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:puneri_paltan/View/single_photo_view.dart';
 
 class PhotosCollectionView extends StatefulWidget {
@@ -15,7 +16,19 @@ class _PhotosCollectionViewState extends State<PhotosCollectionView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Photo Collection"),
+        iconTheme: IconThemeData(
+          color: Colors.white,
+          size: 30,
+        ),
+        title: Text(
+          "Photo Collection".toUpperCase(),
+          style: GoogleFonts.exo(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Colors.orange,
         centerTitle: true,
       ),
       body: Container(
@@ -31,7 +44,7 @@ class _PhotosCollectionViewState extends State<PhotosCollectionView> {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8),
+          padding: EdgeInsets.all(16.0),
           child: GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,

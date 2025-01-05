@@ -26,10 +26,10 @@ class _SeasonsViewState extends State<PhotosSeasonsView> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Photos",
+          "Photos".toUpperCase(),
           style: GoogleFonts.exo(
-            fontSize: 40,
-            fontWeight: FontWeight.w600,
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
         ),

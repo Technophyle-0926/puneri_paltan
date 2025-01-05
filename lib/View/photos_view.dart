@@ -26,12 +26,19 @@ class _PhotosViewState extends State<PhotosView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.white,
+          size: 30,
+        ),
         title: Text(
-          data['catName'].toString(),
-          style: GoogleFonts.bungeeSpice(
+          data['catName'].toString().toUpperCase(),
+          style: GoogleFonts.exo(
             fontSize: 30,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
           ),
         ),
+        backgroundColor: Colors.orange,
         centerTitle: true,
       ),
       body: Container(

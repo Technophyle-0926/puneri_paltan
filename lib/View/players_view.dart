@@ -29,10 +29,10 @@ class _PlayersViewState extends State<PlayersView> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Players",
+          "Players".toUpperCase(),
           style: GoogleFonts.exo(
-            fontSize: 40,
-            fontWeight: FontWeight.w600,
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
         ),

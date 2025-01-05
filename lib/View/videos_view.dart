@@ -28,12 +28,19 @@ class _VideosViewState extends State<VideosView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.white,
+          size: 30,
+        ),
         title: Text(
-          data['catName'].toString(),
-          style: GoogleFonts.bungeeSpice(
+          data['catName'].toString().toUpperCase(),
+          style: GoogleFonts.exo(
             fontSize: 30,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
           ),
         ),
+        backgroundColor: Colors.orange,
         centerTitle: true,
       ),
       body: Container(
@@ -116,10 +123,11 @@ class _VideosViewState extends State<VideosView> {
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(10),
                                     child: YoutubePlayer(
-                                      controller: videocontroller,
-                                      showVideoProgressIndicator: false,
-                                      onReady: () => logger.i("Video is Ready"),
-                                    ),
+                                        controller: videocontroller,
+                                        showVideoProgressIndicator: false,
+                                        onReady: () {
+                                          logger.i("Video is Ready");
+                                        }),
                                   ),
                                 )
                               ],
